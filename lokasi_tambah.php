@@ -7,14 +7,14 @@ if (isset($_POST["create"])) {
         echo "
         <script>
             alert('data berhasil ditambahkan');
-            document.location.href = 'index.php';
+            document.location.href = 'lokasi_master.php';
         </script>
         ";
     } else {
         echo "
         <script>
             alert('data gagal ditambahkan');
-            document.location.href = 'index.php';
+            document.location.href = 'lokasi_master.php';
         </script>
         ";
     }
