@@ -2,8 +2,8 @@
 
 require 'crud_lokasi.php';
 
-$id = $_GET["id"];
-$rows = read("SELECT * FROM tb_lokasi WHERE id='$id'");
+$kode_lokasi = $_GET["kode_lokasi"];
+$rows = read("SELECT * FROM tb_lokasi WHERE kode_lokasi='$kode_lokasi'");
 
 if (isset($_POST["update"])) {
 
@@ -18,7 +18,7 @@ if (isset($_POST["update"])) {
         echo "
         <script>
             alert('data gagal diubah');
-            document.location.href = 'index.php';
+            // document.location.href = 'index.php';
         </script>
         ";
     }
@@ -31,7 +31,7 @@ require 'header.php';
 <h3>Form ubah lokasi</h3>
 <form class="form-group" action="" method="POST">
     <?php foreach ($rows as $row) : ?>
-        <input type="hidden" class="form-control" value="<?php echo $row["id"] ?>" id="id" name="id">
+        <input type="hidden" class="form-control" value="<?php echo $row["kode_lokasi"] ?>" id="kode_lokasi_old" name="kode_lokasi_old">
         <div class="col-md-6">
             <label for="kode_lokasi" class="form-label">Kode lokasi</label>
             <input type="text" class="form-control" value="<?php echo $row["kode_lokasi"] ?>" id="kode_lokasi" name="kode_lokasi" required>

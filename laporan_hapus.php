@@ -1,9 +1,9 @@
 <?php
-require 'crud_lokasi.php';
+require 'crud_laporan.php';
 
-$kode_lokasi = $_GET["kode_lokasi"];
+$id = $_GET["id"];
 
-if (delete($kode_lokasi) > 0) {
+if (delete($id) > 0) {
     echo "
     <script>
         alert('data berhasil dihapus');

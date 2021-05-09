@@ -31,8 +31,8 @@ require 'header.php';
                 <td><?php echo $row["nama_lokasi"]; ?></td>
                 <td><?php echo $row["catatan"]; ?></td>
                 <td class="">
-                    <a href="lokasi_ubah.php?id=<?php echo $row["id"] ?>"><button type="button" class="btn btn-success btn-sm">ubah</button></a>
-                    <a href="lokasi_hapus.php?id=<?php echo $row["id"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')"><button type="button" class="btn btn-danger btn-sm">hapus</button></a>
+                    <a href="lokasi_ubah.php?kode_lokasi=<?php echo $row["kode_lokasi"] ?>"><button type="button" class="btn btn-success btn-sm">ubah</button></a>
+                    <a href="lokasi_hapus.php?kode_lokasi=<?php echo $row["kode_lokasi"] ?>" onclick="return confirm('Apakah anda yakin akan menghapus data?')"><button type="button" class="btn btn-danger btn-sm">hapus</button></a>
 
                 </td>
             </tr>
