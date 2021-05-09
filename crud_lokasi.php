@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'db_lapor');
+require 'db_config.php';
 
 function read($query)
 {

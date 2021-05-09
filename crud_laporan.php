@@ -1,6 +1,6 @@
 <?php
 
-$conn = mysqli_connect('localhost', 'root', '', 'db_lapor');
+require 'db_config.php';
 
 function read($query)
 {
@@ -21,20 +21,69 @@ function create($data)
     $username = $data["username"];
     $lokasi = $data["kode_lokasi"];
     $laporan = $data["laporan"];
-    $bukti = $data["bukti"];
     $prioritas = $data["prioritas"];
     $status = $data["status"];
 
     $date = date('Y-m-d H:i:s');
     $username = "1";
 
+    $bukti = upload();
+
+    if (!$bukti) {
+        return false;
+    }
 
     $query = "INSERT INTO tb_laporan VALUES ('','$username', '$lokasi', '$laporan', '$bukti', '$prioritas', '$date','$status')";
 
     $result = mysqli_query($conn, $query);
 
     return mysqli_affected_rows($conn);
+}
 
+function upload()
+{
+    $namaFile = $_FILES["bukti"]["name"];
+    $ukuranFile = $_FILES["bukti"]["size"];
+    $error = $_FILES["bukti"]["error"];
+    $tmpName = $_FILES["bukti"]["tmp_name"];
+
+    if ($error === 4) {
+        echo "
+        <script>
+        alert('belum ada bukti yang dipilih...');
+        </script>
+        ";
+        return false;
+    }
+
+    $ekstensiGambarValid = ['jpg', 'jpeg', 'png'];
+    $ekstensiGambar = explode('.', $namaFile);
+    $ekstensiGambar = strtolower(end($ekstensiGambar));
+
+    if (!in_array($ekstensiGambar, $ekstensiGambarValid)) {
+        echo "
+        <script>
+        alert('bukti yang anda upload bukan gambar...');
+        </script>
+        ";
+        return false;
+    }
+
+    if ($ukuranFile > 1000000) {
+        echo "
+        <script>
+        alert('ukuran gambar terlalu besar...');
+        </script>
+        ";
+        return false;
+    }
+
+    $namaFileBaru = uniqid();
+    $namaFileBaru .= '.';
+    $namaFileBaru .= $ekstensiGambar;
+
+    move_uploaded_file($tmpName, 'upload/' . $namaFileBaru);
+    return $namaFileBaru;
 }
 
 
@@ -55,17 +104,25 @@ function update($data)
 
     global $conn;
     $id = $data["id"];
-    $username = $data["username"];
-    $password = $data["password"];
-    $role = $data["role"];
+    $kode_lokasi = $data["kode_lokasi"];
+    $laporan = $data["laporan"];
+    $prioritas = $data["prioritas"];
+    $status = $data["status"];
+    $bukti_old = $data["bukti_old"];
 
-    $password = password_hash($password, PASSWORD_DEFAULT);
+    if ($_FILES['bukti']['error'] === 4) {
+        $bukti = $bukti_old;
+    }else{
+        $bukti = upload();
+    }
 
     $query = "UPDATE tb_laporan SET 
-            username = '$username',
-            password = '$password',
-            role = '$role'
-            WHERE id = '$id'
+            kode_lokasi = '$kode_lokasi',
+            laporan = '$laporan',
+            bukti = '$bukti',
+            prioritas = '$prioritas',
+            status = '$status'
+            WHERE id = '$id'            
     ";
 
     mysqli_query($conn, $query);
