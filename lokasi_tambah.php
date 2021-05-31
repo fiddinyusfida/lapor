@@ -1,3 +1,5 @@
+<?php include 'template/header.php'; ?>
+
 <?php
 require 'crud_lokasi.php';
 
@@ -19,9 +21,9 @@ if (isset($_POST["create"])) {
         ";
     }
 }
-
-require 'header.php';
 ?>
+
+
 
 <h3>Form tambah lokasi</h3>
 
@@ -44,4 +46,4 @@ require 'header.php';
 </form>
 
 
-<?php require 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>

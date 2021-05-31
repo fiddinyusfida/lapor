@@ -1,35 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include "template/header.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/style.css">
-    <title>Login</title>
-</head>
+<?php 
 
-<body>
+if(isset($_POST["submit"])){
+    header("location: dash_admin.php", true, 301);
+    exit();
+}
 
-    <div class="container">
-        <img src="assets/img/logo-uns.png" alt="logo uns" style="width: 20%; height:20%">
-        <div class="row justify-content-center">
-            <div class="col-md-3 align-items-center">
-                <form>
-                    <div class="mb-3">
-                        <label for="username" class="form-label">Username</label>
-                        <input type="email" class="form-control" id="username" aria-describedby="username" autocomplete="off">
-                    </div>
-                    <div class="mb-3">
-                        <label for="password" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="password" autocomplete="off">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Login</button>
-                </form>
-            </div>
+
+?>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <h5>Login ke laporUNS</h5>
+            <form class="form-group" action="" method="POST">
+                <div class="col">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username">
+                </div>
+                <div class="col">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password">
+                </div>
+                <div class="col-md-6 mt-4">
+                    <button type="submit" class="btn btn-sm btn-primary" name="submit">Login</button>
+                </div>
+            </form>
+            <br>
+            <p>Belum punya akun? <a href="register.php">Buat akun laporUNS</a> </p>
         </div>
     </div>
-</body>
-
-</html>
+</div>

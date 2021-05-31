@@ -7,6 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
+
+    <!-- Custom Font  -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/style.css">
+    
     <title></title>
 </head>
 
@@ -14,9 +24,9 @@
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="index.php">
                 <img src="assets/img/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-bottom">
-                Lapor
+                LaporUNS
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -36,14 +46,5 @@
     </nav>
     <!-- navbar end  -->
 
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-md-2">
-                <nav class="nav flex-column">
-                    <a class="nav-link active" aria-current="page" href="lokasi_master.php">Master Lokasi</a>
-                    <a class="nav-link" href="user_master.php">Master User</a>
-                    <a class="nav-link" href="laporan_master.php">Master Laporan</a>
-                </nav>
-            </div>
+    <?php include 'template/sidebar.php' ?>
 
-            <div class="col-md-9">

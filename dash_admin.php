@@ -1,7 +1,7 @@
-<?php include 'header.php'; ?>
+<?php include 'template/header.php'; ?>
 
 
 <h3>Dashboard Admin</h3>
 
 
-<?php include 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>

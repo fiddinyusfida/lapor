@@ -1,3 +1,5 @@
+<?php include 'template/header.php'; ?>
+
 <?php
 
 require 'crud_user.php';
@@ -23,8 +25,6 @@ if (isset($_POST["update"])) {
         ";
     }
 }
-
-require 'header.php';
 ?>
 
 
@@ -54,4 +54,4 @@ require 'header.php';
     <?php endforeach; ?>
 </form>
 
-<?php require 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>

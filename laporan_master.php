@@ -1,3 +1,5 @@
+<?php include 'template/header.php'; ?>
+
 <?php
 require 'crud_laporan.php';
 
@@ -7,8 +9,6 @@ $rows = read("SELECT * FROM tb_user
                 JOIN tb_lokasi
                 ON tb_laporan.kode_lokasi = tb_lokasi.kode_lokasi
                 ");
-
-require 'header.php';
 ?>
 
 
@@ -49,4 +49,4 @@ require 'header.php';
 
 
 
-<?php require 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>

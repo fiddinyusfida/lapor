@@ -1,9 +1,9 @@
+<?php include 'template/header.php'; ?>
+
 <?php
 require 'crud_lokasi.php';
 
 $rows = read("SELECT * FROM tb_lokasi");
-
-require 'header.php';
 ?>
 
 
@@ -43,4 +43,4 @@ require 'header.php';
 
 
 
-<?php require 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>

@@ -1,3 +1,5 @@
+<?php include 'template/header.php'; ?>
+
 <?php
 require 'crud_user.php';
 
@@ -15,7 +17,6 @@ if (isset($_POST["create"])) {
     }
 }
 
-require 'header.php';
 ?>
 
 <h3>Form tambah user</h3>
@@ -48,4 +49,4 @@ require 'header.php';
 </form>
 
 
-<?php require 'footer.php'; ?>
+<?php include 'template/footer.php'; ?>
