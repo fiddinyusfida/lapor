@@ -43,9 +43,14 @@ require 'header.php';
             <label for="kode_lokasi" class="form-label">Lokasi</label>
             <select class="form-select" aria-label="Default select example" name="kode_lokasi">
                 <option value="">--Pilih Lokasi--</option>
-                <?php foreach ($rows as $row) : ?>
-                    <option value="<?php echo $row["kode_lokasi"] ?>"><?php echo $row["kode_lokasi"] ?></option>
+                <?php
+                $list = read("SELECT kode_lokasi FROM tb_lokasi");
+                foreach ($list as $item) :
+                ?>
+                    <option value="<?php echo $item['kode_lokasi']; ?>"<?php if($item['kode_lokasi']==$row['kode_lokasi']) echo 'selected="selected"'; ?>><?php echo $item['kode_lokasi']; ?></option>
                 <?php endforeach; ?>
+
+                <!-- <option value="<?php echo $row["kode_lokasi"] ?>" selected><?php echo $row["kode_lokasi"] ?></option> -->
             </select>
         </div>
         <div class="col-md-6">
@@ -54,7 +59,7 @@ require 'header.php';
         </div>
         <div class="col-md-6">
             <label for="bukti" class="form-label">Bukti</label><br>
-            <img src="upload/<?php echo $row["bukti"]?>" width="100" alt="">
+            <img src="upload/<?php echo $row["bukti"] ?>" width="100" alt="">
             <input type="file" class="form-control" id="bukti" name="bukti">
         </div>
         <div class="col-md-6">

@@ -1,0 +1,30 @@
+body {
+    height: 100%;
+    font-family: 'Roboto';
+}
+
+
+
+#about{
+    margin-top: 10rem;
+    height: 350px;
+}
+
+#why{
+    height: 350px;
+    background-color: #e2edff;
+}
+
+#gallery{
+    height: 500px;
+}
+
+#flow{
+    height: 500px;
+}
+
+footer{
+    padding-top: 100px;
+    height: 300px;
+    background-color: #e2edff;
+}
