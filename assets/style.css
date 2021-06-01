@@ -4,6 +4,9 @@ body {
 }
 
 
+#container{
+    padding-top: 10rem;
+}
 
 #about{
     margin-top: 10rem;

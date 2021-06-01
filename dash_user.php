@@ -15,8 +15,4 @@ require 'db_config.php';
 
 <h5>Dashboard User</h5>
 
-
-
-
-
 <?php include 'template/footer.php'; ?>

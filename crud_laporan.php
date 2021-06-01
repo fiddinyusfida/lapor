@@ -129,3 +129,27 @@ function update($data)
 
     return mysqli_affected_rows($conn);
 }
+
+
+function createByUser($data)
+{
+    global $conn;
+    $id = $data["id"];
+    $lokasi = $data["kode_lokasi"];
+    $laporan = $data["laporan"];
+
+    $date = date('Y-m-d H:i:s');
+
+    $bukti = upload();
+
+    if (!$bukti) {
+        return false;
+    }
+
+    $query = "INSERT INTO tb_laporan VALUES ('',$id, '$lokasi', '$laporan', '$bukti', 'x', '$date','validasi')";
+
+    echo $query;
+    $result = mysqli_query($conn, $query);
+
+    return mysqli_affected_rows($conn);
+}

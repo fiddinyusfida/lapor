@@ -20,26 +20,23 @@
     <title></title>
 </head>
 
-<body class="bg-light">
+<body class="bg-light" id="home">
     <!-- navbar  -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded">
         <div class="container">
             <a class="navbar-brand" href="index.php">
-                <img src="assets/img/bootstrap-logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-bottom">
-                LaporUNS
+                <img src="assets/img/laporUNS.png" alt="" width="150" class="d-inline-block align-text-bottom">
             </a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li> -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
+                    <li class="nav-item"></li>
                 </ul>
                 <?php
-                if(isset($_SESSION["login"])){
-                    echo '
+                
+                if (isset($_SESSION["login"])) {
+                    $username = $_SESSION["username"];
+                    echo 'hi, '.$username.' . ';
+                    echo ' 
                     <form class="d-flex" action="logout.php" method="POST">
                     <button class="btn btn-outline-danger btn-sm" type="submit">Logout</button>
                     </form>

@@ -22,7 +22,7 @@ if (isset($_POST["create"])) {
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4">
-            <h5 class="text-center">Daftar akun laporUNS</h5>
+            <h5 class="text-center">Daftar akun LaporUNS</h5>
             <form class="form-group mt-3" action="" method="POST">
                 <div class="col">
                     <label for="username" class="form-label">Username</label>
@@ -41,7 +41,7 @@ if (isset($_POST["create"])) {
                 </div>
             </form>
             <br>
-            <p>Sudah punya akun? <a href="login.php">Login laporUNS</a> </p>
+            <p>Sudah punya akun? <a href="login.php">Login LaporUNS</a> </p>
         </div>
     </div>
 </div>

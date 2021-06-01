@@ -21,6 +21,7 @@ if (isset($_POST["login"])) {
         if (password_verify($password, $rows["password"])) {
 
             $_SESSION["login"] = true;
+            $_SESSION["username"] = $rows["username"];
 
             if ($rows["role"] == "admin") {
                 header("location: dash_admin.php", true, 301);
@@ -36,10 +37,10 @@ if (isset($_POST["login"])) {
 }
 ?>
 
-<div class="container">
+<div class="container" id="login">
     <div class="row">
         <div class="col-md-4 offset-md-4">
-            <h5 class="text-center">Login akun laporUNS</h5>
+            <h5 class="text-center">Login akun LaporUNS</h5>
             <form class="form-group mt-3" action="" method="POST">
                 <div class="col">
                     <label for="username" class="form-label">Username</label>
@@ -54,7 +55,7 @@ if (isset($_POST["login"])) {
                 </div>
             </form>
             <br>
-            <p>Belum punya akun? <a href="register.php">Buat akun laporUNS</a> </p>
+            <p>Belum punya akun? <a href="register.php">Buat akun LaporUNS</a> </p>
         </div>
     </div>
 </div>
