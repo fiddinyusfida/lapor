@@ -3,8 +3,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4">
-            <h5>Daftar ke laporUNS</h5>
-            <form class="form-group" action="" method="POST">
+            <h5 class="text-center">Daftar akun laporUNS</h5>
+            <form class="form-group mt-3" action="" method="POST">
                 <div class="col">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" id="username" name="username" required>

@@ -1,4 +1,7 @@
-<?php include 'template/footer.php'; ?>
+<?php 
+include 'template/header.php'; 
+include 'template/sidebar.php'; 
+?>
 
 <?php
 require 'crud_laporan.php';

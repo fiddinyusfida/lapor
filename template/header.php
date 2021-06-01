@@ -45,6 +45,3 @@
         </div>
     </nav>
     <!-- navbar end  -->
-
-    <?php include 'template/sidebar.php' ?>
-
