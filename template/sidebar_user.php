@@ -3,7 +3,8 @@
         <div class="col-md-2">
             <nav class="nav flex-column">
                 <a class="nav-link active" aria-current="page" href="profile_user.php">Profile</a>
-                <a class="nav-link" href="user_laporan.php">Laporan</a>
+                <a class="nav-link" href="laporan_tambah.php">Tambah Laporan</a>
+                <a class="nav-link" href="user_laporan.php">Riwayat Laporan</a>
             </nav>
         </div>
 

@@ -1,34 +1,38 @@
 <?php
+session_start();
 include 'template/header.php';
 include 'db_config.php';
 ?>
 
-
 <?php
 
 if (isset($_POST["login"])) {
-    header("location: dash_admin.php", true, 301);
-    exit();
 
-    // $username = $_POST["username"];
-    // $password = $_POST["password"];
+    $username = $_POST["username"];
+    $password = $_POST["password"];
 
-    // $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'");
 
-    // if (mysqli_num_rows($result)) {
+    if (mysqli_num_rows($result)) {
 
-    //     $rows = mysqli_fetch_assoc($result);
+        $rows = mysqli_fetch_assoc($result);
 
-    //     if (password_verify($password, $rows["password"])) {
-    //         header("location: dash_admin.php", true, 301);
-    //         exit();
-    //     }
-    // }
+        if (password_verify($password, $rows["password"])) {
 
-    // $error = true;
+            $_SESSION["login"] = true;
+
+            if ($rows["role"] == "admin") {
+                header("location: dash_admin.php", true, 301);
+                exit();
+            } else if ($rows["role"] == "user") {
+                header("location: dash_user.php", true, 301);
+                exit();
+            }
+        }
+    }
+
+    $error = true;
 }
-
-
 ?>
 
 <div class="container">

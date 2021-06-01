@@ -1,5 +1,24 @@
 <?php include 'template/header.php' ?>
 
+<?php
+require 'crud_user.php';
+
+if (isset($_POST["create"])) {
+    if (createUser($_POST) > 0) {
+        echo "
+        <script>
+            alert('data berhasil ditambahkan');
+            document.location.href = 'login.php';
+        </script>
+        ";
+    } else {
+        echo mysqli_error($conn);
+    }
+}
+
+?>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-4 offset-md-4">

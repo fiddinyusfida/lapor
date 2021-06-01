@@ -87,3 +87,42 @@ function update($data)
 
     return mysqli_affected_rows($conn);
 }
+
+
+
+function createUser($data)
+{
+    global $conn;
+    $username = $data["username"];
+    $password = $data["password"];
+    $password2 = $data["password2"];
+
+    $query = "SELECT username FROM tb_user WHERE username = '$username'";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_fetch_assoc($result) > 0) {
+        echo "
+        <script>
+        alert('username sudah digunakan');
+        document.location.href = 'register.php';
+        </script>
+        ";
+        exit;
+    }
+
+    $error = 0;
+    if ($password != $password2) {
+        echo "
+        <script>
+        alert('password tidak sesuai');
+        document.location.href = 'register.php';
+        </script>
+        ";
+        exit;
+    } else {
+        $password = password_hash($password, PASSWORD_DEFAULT);
+        $query = "INSERT INTO tb_user VALUES ('','$username', '$password', 'user')";
+        mysqli_query($conn, $query);
+        return mysqli_affected_rows($conn);
+    }
+}
