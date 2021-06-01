@@ -1,10 +1,31 @@
-<?php include 'template/header.php' ?>
+<?php
+include 'template/header.php';
+include 'db_config.php';
+?>
 
-<?php 
 
-if(isset($_POST["submit"])){
+<?php
+
+if (isset($_POST["login"])) {
     header("location: dash_admin.php", true, 301);
     exit();
+
+    // $username = $_POST["username"];
+    // $password = $_POST["password"];
+
+    // $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'");
+
+    // if (mysqli_num_rows($result)) {
+
+    //     $rows = mysqli_fetch_assoc($result);
+
+    //     if (password_verify($password, $rows["password"])) {
+    //         header("location: dash_admin.php", true, 301);
+    //         exit();
+    //     }
+    // }
+
+    // $error = true;
 }
 
 
@@ -24,7 +45,7 @@ if(isset($_POST["submit"])){
                     <input type="password" class="form-control" id="password" name="password">
                 </div>
                 <div class="col-md-6 mt-4">
-                    <button type="submit" class="btn btn-sm btn-primary" name="submit">Login</button>
+                    <button type="submit" class="btn btn-sm btn-primary" name="login">Login</button>
                 </div>
             </form>
             <br>

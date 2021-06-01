@@ -78,9 +78,9 @@ if (isset($_POST["update"])) {
             <label for="status" class="form-label">Status</label>
             <select class="form-select" aria-label="Default select example" name="status">
                 <option value="">--Pilih status--</option>
-                <option value="belum divalidasi" <?php if ($row["status"] == "belum divalidasi") { ?> selected="selected" <?php } ?>>Belum divalidasi</option>
-                <option value="proses validasi" <?php if ($row["status"] == "proses validasi") { ?> selected="selected" <?php } ?>>Proses validasi</option>
-                <option value="ditindaklajuti" <?php if ($row["status"] == "ditindaklajuti") { ?> selected="selected" <?php } ?>>Ditindaklajuti</option>
+                <option value="validasi" <?php if ($row["status"] == "validasi") { ?> selected="selected" <?php } ?>>Validasi</option>
+                <option value="eksekusi" <?php if ($row["status"] == "eksekusi") { ?> selected="selected" <?php } ?>>Eksekusi</option>
+                <option value="selesai" <?php if ($row["status"] == "selesai") { ?> selected="selected" <?php } ?>>Selesai</option>
             </select>
         </div>
         <div class="col-md-6 mt-4">

@@ -14,8 +14,6 @@ $rows = read("SELECT * FROM tb_lokasi");
 
 <a href="lokasi_tambah.php"><button type="button" class="btn btn-primary btn-sm" name="tambah">Tambah data</button></a>
 <table class="table table-hover ">
-
-
     <thead>
         <tr>
             <th scope="col">#</th>
