@@ -65,9 +65,9 @@ if (isset($_POST["create"])) {
         <label for="status" class="form-label">Status</label>
         <select class="form-select" aria-label="Default select example" name="status">
             <option value="">--Pilih status--</option>
-            <option value="belum divalidasi">Belum divalidasi</option>
-            <option value="proses validasi">Proses validasi</option>
-            <option value="ditindaklajuti">Ditindaklajuti</option>
+            <option value="validasi">Validasi</option>
+            <option value="eksekusi">Eksekusi</option>
+            <option value="selesai">Selesai</option>
         </select>
     </div>
     <div class="col-md-6 mt-4">
