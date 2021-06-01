@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 include 'template/header.php';
 include 'db_config.php';
 ?>
